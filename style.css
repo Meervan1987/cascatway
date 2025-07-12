@@ -1,0 +1,643 @@
+/* Базовый сброс и общие стили */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    background-color: #282323; /* Темный фон */
+    color: #FFFFFF; /* Белый текст */
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+
+.btn {
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.primary-btn {
+    background-color: #118DA8; /* Основная кнопка */
+    color: #FFFFFF;
+    border: none;
+}
+
+.primary-btn:hover {
+    background-color: #0d6e83;
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+}
+
+.secondary-btn:hover {
+    background-color: #282323;
+}
+
+.tag {
+    background-color: #191919; /* Темный фон тега */
+    color: #118DA8; /* Цвет текста тега */
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 18px;
+    display: inline-block; /* чтобы можно было применять отступы */
+}
+
+
+.header {
+    background-color: #282323;
+    padding: 30px 0;
+    border-bottom: 1px solid #333; /* Небольшая граница */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2.1rem; /* Размер логотипа */
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+.main-nav .nav-list {
+    display: flex;
+    gap: 40px;
+}
+
+.main-nav .nav-list li a {
+    font-size: 17px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.main-nav .nav-list li a:hover {
+    color: #118DA8;
+}
+
+
+.hero-section {
+    padding: 90px 0 100px;
+    background-color: #282323;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+
+}
+
+.hero-left {
+    flex-shrink: 0; /* Не сжимать изображение */
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 530px; /* Максимальная ширина изображения */
+    height: auto;
+    border-radius: 12px;
+}
+
+.hero-right {
+    flex-grow: 1; /* Позволяет правой части занимать доступное пространство */
+    max-width: 500px;
+    text-align: left;
+}
+
+.hero-title {
+    font-size: 72px;
+    line-height: 79px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.hero-title span {
+    color: black/* Цвет "level" */
+}
+
+.listen-on-text {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 24px;
+    color: #FFFFFF;
+    opacity: 0.7;
+    margin-bottom: 15px;
+}
+
+.podcast-platforms {
+    display: flex;
+    gap: 20px; /* Расстояние между иконками платформ */
+    flex-wrap: wrap;
+}
+
+.platform-icon {
+    width: 32px; /* Размер иконок */
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    background-color: #2F2F2F; /* Фон для иконок */
+}
+
+
+.apple-icon svg {
+    width: 32px;
+    height: 32px;
+}
+.apple-icon svg g {
+    transform: translateX(-49px);
+}
+
+.google-icon svg {
+    width: 32px;
+    height: 32px;
+}
+.google-icon svg g {
+    transform: translateX(-98px);
+}
+
+.overcast-icon svg {
+    width: 32px;
+    height: 32px;
+}
+.overcast-icon svg g {
+    transform: translateX(-196px);
+}
+
+
+
+
+.episodes-section {
+    background-color: #282323; /* Черный фон для этой секции */
+    padding: 100px 0;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 64px;
+    line-height: 70px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.episodes-section .primary-btn {
+    margin-bottom: 50px; /* Отступ под кнопкой "View all episodes" */
+}
+
+.episode-cards-wrapper {
+    display: flex;
+    flex-direction: column; /* Эпизоды идут друг за другом по вертикали */
+    gap: 40px; /* Расстояние между карточками эпизодов */
+}
+
+.episode-card {
+    width: 1300px;
+    height: 545px;
+    background-color: #191919; /* Фон карточки */
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    text-align: left;
+    gap: 30px;
+    flex-wrap: wrap; /* Для адаптивности */
+}
+
+.episode-thumbnail {
+    flex-shrink: 0;
+}
+
+.episode-thumbnail img {
+    width: 389px; /* Размер изображения эпизода */
+    height: 465px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.episode-info {
+    flex-grow: 1;
+    max-width: 700px; /* Ограничиваем ширину текста */
+}
+
+.episode-info .tag {
+    margin-bottom: 20px;
+}
+
+.episode-number {
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 700;
+    color: #118DA8; /* Цвет номера эпизода */
+    margin-bottom: 10px;
+}
+
+.episode-title {
+    font-size: 42px;
+    line-height: 50px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.episode-description {
+    font-size: 22px;
+    line-height: 33px;
+    color: rgba(255, 255, 255, 0.7); /* Полупрозрачный текст */
+    margin-bottom: 20px;
+}
+.host-section {
+    width: 100%;
+    background-color: #282323;
+    padding: 100px 0; /* Add padding for spacing */
+}
+
+.host-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    flex-wrap: wrap;
+    max-width: 1300px; /* Constrain container width */
+    margin: 0 auto; /* Center the container */
+    padding: 0 20px; /* Add horizontal padding for smaller screens */
+}
+
+.host-left {
+    flex-grow: 1;
+    max-width: 500px;
+    position: relative; /* Essential for positioning the circular button */
+    padding-left: 0; /* Reset or adjust as needed, as the button is positioned */
+}
+
+/* Styles for the new circular button */
+.host-circle-button {
+    position: absolute;
+    top: -50px; /* Adjust vertical position as needed */
+    left: -70px; /* Adjust horizontal position as needed */
+    width: 100px; /* Define width */
+    height: 100px; /* Define height, must be equal to width for a perfect circle */
+    border-radius: 50%; /* Makes it a perfect circle */
+    background-color: #118DA8; /* Example background color */
+    border: none; /* Remove default button border */
+    cursor: pointer; /* Indicates it's clickable */
+    z-index: 1; /* Ensure it's above other content if necessary */
+    display: flex; /* To center any content inside (like an icon) */
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+}
+
+
+
+
+.arrow {
+    background-color: #09516b; /* Use a darker color if it's separate from the circular button */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Example border */
+    border-radius: 50%; /* Keep it rectangular as per initial design, or make round */
+    width: 60px; /* Adjust size */
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.arrow:hover {
+    background-color: #282323 /* Example hover for the arrow button */
+}
+
+.arrow svg {
+    width: 32px;
+    height: 32px;
+    fill: white;
+}
+
+.host-intro {
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 700;
+    color: #118DA8;
+    margin-bottom: 20px;
+}
+
+.host-name {
+    font-size: 64px;
+    line-height: 70px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.host-description {
+    font-size: 22px;
+    line-height: 33px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 30px;
+}
+
+.host-right {
+    flex-shrink: 0;
+}
+
+.host-image {
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    border-radius: 12px;
+}
+
+
+.newsletter-section {
+    background-color: #282323; /* Черный фон */
+    padding: 100px 0;
+}
+
+.newsletter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    background-color: rgb(23, 19, 19);
+    border-radius: 12px;
+    padding: 60px 50px;
+}
+
+.newsletter-content {
+    flex-basis: 40%; /* Примерное распределение ширины */
+    min-width: 300px;
+}
+
+.newsletter-subtitle {
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 700;
+    color: #ffffff; /* Черный текст на синем фоне */
+    margin-bottom: 10px;
+}
+
+.newsletter-title {
+    font-size: 48px;
+    line-height: 55px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.newsletter-form-wrapper {
+    flex-basis: 50%;
+    min-width: 300px;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 20px 30px;
+    background-color: #282323; /* Темный фон полей ввода */
+    border: none;
+    border-radius: 6px;
+    font-size: 22px;
+    line-height: 33px;
+    color: #FFFFFF;
+}
+
+.form-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.submit-btn {
+    width: fit-content; /* Кнопка по ширине контента */
+    background-color: hsla(191, 82%, 36%, 1);
+    color: #FFFFFF;
+    align-self: flex-start; /* Выравнивание кнопки слева */
+}
+
+.submit-btn:hover {
+    background-color: #282323;
+}
+.partner-logos-section {
+    padding: 20px; /* Add some padding around the section */
+    display: flex; /* Use flex to center the container if needed */
+    justify-content: center; /* Center the container horizontally */
+}
+
+.partner-logos-container {
+    display: grid;
+    grid-template-columns: repeat(3, 421px); /* 3 columns, each 421px wide */
+    grid-template-rows: repeat(2, 321px);    /* 2 rows, each 321px high */
+    gap: 20px; /* Adjust the gap between cards as needed */
+    justify-content: center; /* Center the grid items within the container */
+    align-content: center; /* Center the grid rows within the container */
+    width: fit-content; /* Make the container fit the content width */
+}
+
+.partner-logo-card1-top,
+.partner-logo-card2-top,
+.partner-logo-card3-top,
+.partner-logo-card1-bottom,
+.partner-logo-card2-bottom,
+.partner-logo-card3-bottom {
+    width: 421px;
+    height: 321px;
+    /* Add border, background, padding, etc., for visual representation */
+    border: 1px solid #171313;
+    border-radius: 32px;
+    background-color: rgb(23, 19, 19);
+    padding: 15px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute content vertically */
+    align-items: flex-start; /* Align content to the start of the cross-axis */
+}
+
+.partner-logos-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* To display stars in a row */
+    justify-content: center;
+    gap: 5px; /* Space between stars */
+}
+
+.partner-logos-container p {
+    font-size: 30px;
+    line-height: 1.5;
+    margin: 15px 0;
+}
+
+.partner-logos-container h5 {
+
+    font-size: 24px;
+    color: hsla(0, 0%, 100%, 0.7);
+    margin-top: 20px; /* Pushes the name to the bottom */
+}
+
+
+
+
+footer {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a; /* Dark background similar to the image */
+    color: #e0e0e0;
+}
+
+.castaway-footer {
+    background-color: #282323; /* Darker background for the footer as seen in the image */
+    padding: 60px 40px; /* Adjust padding as needed */
+    color: #e0e0e0;
+    font-size: 14px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    max-width: 1200px; /* Max width to align with typical website content */
+    margin: 0 auto;
+    padding-bottom: 40px; /* Space between top and bottom sections */
+    border-bottom: 1px solid #333; /* Separator line */
+}
+
+.footer-brand {
+    margin-bottom: 20px;
+}
+
+.footer-brand h2 {
+    font-size: 28px;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.footer-brand p {
+    font-size: 12px;
+    color: #999;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 60px; /* Space between navigation columns */
+    margin-bottom: 20px;
+}
+
+.nav-column h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.nav-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+}
+
+.nav-column ul li {
+    margin-bottom: 8px;
+}
+
+.nav-column ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-column ul li a:hover {
+    color: #ffffff;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.footer-social a {
+    color: #e0e0e0;
+    font-size: 24px; /* Size of social icons */
+    transition: color 0.3s ease;
+    gap: 10px;
+}
+
+.footer-social a:hover {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 20px auto 0; /* Top margin to separate from content */
+    padding-top: 20px; /* Padding above "Powered by Webflow" and "Licenses" */
+    font-size: 12px;
+    color: #999;
+}
+
+.footer-bottom a {
+    color: #999;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+    color: #e0e0e0;
+}
+
+
